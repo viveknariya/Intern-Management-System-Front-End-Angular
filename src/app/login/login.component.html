@@ -1,0 +1,17 @@
+<p>login works!</p>
+<form class="mx-5 w-50" [formGroup]="loginForm" (ngSubmit)="onLogIn()">
+    <div class="form-group">
+        <label class="form-label">User Name</label>
+        <input type="text" class="form-control" formControlName="userName" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="Password" />
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Log in</button>
+
+</form>
