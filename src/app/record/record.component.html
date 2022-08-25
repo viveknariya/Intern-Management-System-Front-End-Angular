@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div>
+    <button type="button" class="btn btn-primary" (click)="OnAdd()">Add</button>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Address</th>
+            <th scope="col">Status</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recordlst; let i = index;">
+                <td>{{ i + 1}}</td>
+                <td>{{ r.internId}}</td>
+                <td>{{ r.internName}}</td>
+                <td>{{ r.phoneNumber}}</td>
+                <td>{{ r.emailId}}</td>
+                <td>{{ r.internAddress}}</td>
+                <td>{{ r.internStatus}}</td>
+                <td>{{ r.designation}}</td>
+                <td>
+                    <div class="d-flex flex-row">
+                        <button type="button" class="btn btn-danger" (click)="OnDelete(r.internId)">Delete</button>|
+                        <button type="button" class="btn btn-warning" (click)="OnEdit(r.internId)">Edit</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

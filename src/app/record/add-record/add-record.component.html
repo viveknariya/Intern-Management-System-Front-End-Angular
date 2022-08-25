@@ -1,0 +1,49 @@
+<form [formGroup]="RegistrationForm">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Intern Id</label>
+            <input class="form-control" type="text" formControlName="internId">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input class="form-control" type="text" formControlName="internName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Password</label>
+            <input class="form-control" type="password" formControlName="internPassword">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Confirm Password</label>
+            <input class="form-control" type="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Phone Number</label>
+            <input class="form-control" type="text" formControlName="phoneNumber">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Mail Id</label>
+            <input class="form-control" type="text" formControlName="emailId">
+        </div>
+    </div>
+    <div>
+        <label class="form-label">Address</label>
+        <input class="form-control" type="text" formControlName="internAddress">
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Status</label>
+            <input class="form-control" type="text" formControlName="internStatus">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Designation</label>
+            <select class="form-select" formControlName="designation">
+                <option *ngFor="let d of designationlst;" [value]="d.designationId">{{ d.designationName }}</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!RegistrationForm.valid" (click)="onAdd()">Add</button>
+</form>

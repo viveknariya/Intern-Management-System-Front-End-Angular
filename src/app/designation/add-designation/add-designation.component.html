@@ -1,0 +1,21 @@
+<form [formGroup]="RegistrationForm">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Designation Name</label>
+            <input class="form-control" type="text" formControlName="designationName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Role Name</label>
+            <input class="form-control" type="text" formControlName="roleName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Department Name</label>
+            <input class="form-control" type="text" formControlName="departmentName">
+        </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!RegistrationForm.valid" (click)="onAdd()">Add</button>
+</form>

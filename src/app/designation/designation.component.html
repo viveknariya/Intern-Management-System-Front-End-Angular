@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div>
+    <button type="button" class="btn btn-primary" (click)="OnAdd()">Add</button>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Designation Name</th>
+            <th scope="col">Role Name</th>
+            <th scope="col">Department Name</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recordlst; let i = index;">
+                <td>{{ i + 1}}</td>
+                <td>{{ r.designationName}}</td>
+                <td>{{ r.roleName}}</td>
+                <td>{{ r.departmentName}}</td>
+                <td>
+                    <div class="d-flex flex-row">
+                        <button type="button" class="btn btn-danger"
+                            (click)="OnDelete(r.designationId)">Delete</button>|
+                        <button type="button" class="btn btn-warning" (click)="OnEdit(r.designationId)">Edit</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
