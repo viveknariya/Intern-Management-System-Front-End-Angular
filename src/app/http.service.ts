@@ -17,9 +17,13 @@ export class HttpService {
       next: nxt => {
         console.log(nxt)
         this.route.navigate(['record'])
+        alert("welcome")
+        localStorage.setItem('login', 'ok')
+
       },
       error: err => {
         console.log(err)
+        alert("login failed")
       }
     })
   }

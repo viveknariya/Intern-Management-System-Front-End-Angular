@@ -15,11 +15,11 @@ export class EditWorkinghourComponent implements OnInit {
 
   constructor(private http: HttpClient, private https: HttpService, private activeroute: ActivatedRoute) {
     this.RegistrationForm = new FormGroup({
-      whid: new FormControl(""),
-      internId: new FormControl("", Validators.required),
+      whid: new FormControl(),
+      internId: new FormControl("", [Validators.required, Validators.minLength(4)]),
       monthly: new FormControl("", Validators.required),
-      companyWorkingHour: new FormControl("", Validators.required),
-      internWorkingHour: new FormControl()
+      companyWorkingHour: new FormControl("", [Validators.required, Validators.pattern("[0-9]+")]),
+      internWorkingHour: new FormControl("", [Validators.required, Validators.pattern("[0-9]+")])
     })
   }
 

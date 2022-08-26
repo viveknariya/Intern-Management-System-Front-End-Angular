@@ -1,16 +1,25 @@
-<form class="mx-5 w-50" [formGroup]="loginForm" (ngSubmit)="onLogIn()">
-    <div class="form-group">
-        <label class="form-label">User Name</label>
-        <input type="text" class="form-control" formControlName="userName" />
-
+<div class="bg-white font-monospace p-5 h5">
+    <div class="py-2 text-center my-2">
+        <a [routerLink]="['/register']">Switch To Register</a>
     </div>
-
-    <div class="form-group">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="Password" />
-
+    <div class="h2 py-2 text-bg-success text-center mb-4">
+        Login Form
     </div>
+    <hr>
+    <form [formGroup]="loginForm">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">User Name</label>
+                <input type="text" class="form-control" formControlName="userName" />
+            </div>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Log in</button>
-
-</form>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="Password" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="onLogIn()">Log in</button>
+    </form>
+</div>

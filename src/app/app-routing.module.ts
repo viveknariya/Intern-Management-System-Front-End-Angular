@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { AddDesignationComponent } from './designation/add-designation/add-designation.component';
 import { DesignationComponent } from './designation/designation.component';
 import { EditDesignationComponent } from './designation/edit-designation/edit-designation.component';
@@ -16,21 +17,22 @@ import { EditWorkinghourComponent } from './workinghour/edit-workinghour/edit-wo
 import { WorkinghourComponent } from './workinghour/workinghour.component';
 
 const routes: Routes = [
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "record", component: RecordComponent },
-  { path: "designation", component: DesignationComponent },
-  { path: "addrecord", component: AddRecordComponent },
-  { path: "editrecord/:id", component: EditRecordComponent },
-  { path: "editdesignation/:id", component: EditDesignationComponent },
-  { path: "adddesignation", component: AddDesignationComponent },
-  { path: "designation", component: DesignationComponent },
-  { path: "addleave", component: AddLeaveComponent },
-  { path: "editleave/:id", component: EditLeaveComponent },
-  { path: "leave", component: LeaveComponent },
-  { path: "workinghour", component: WorkinghourComponent },
-  { path: "editworkinghour/:id", component: EditWorkinghourComponent },
-  { path: "addworkinghour", component: AddWorkinghourComponent }
+  { path: "record", component: RecordComponent, canActivate: [AuthGuard] },
+  { path: "designation", component: DesignationComponent, canActivate: [AuthGuard] },
+  { path: "addrecord", component: AddRecordComponent, canActivate: [AuthGuard] },
+  { path: "editrecord/:id", component: EditRecordComponent, canActivate: [AuthGuard] },
+  { path: "editdesignation/:id", component: EditDesignationComponent, canActivate: [AuthGuard] },
+  { path: "adddesignation", component: AddDesignationComponent, canActivate: [AuthGuard] },
+  { path: "designation", component: DesignationComponent, canActivate: [AuthGuard] },
+  { path: "addleave", component: AddLeaveComponent, canActivate: [AuthGuard] },
+  { path: "editleave/:id", component: EditLeaveComponent, canActivate: [AuthGuard] },
+  { path: "leave", component: LeaveComponent, canActivate: [AuthGuard] },
+  { path: "workinghour", component: WorkinghourComponent, canActivate: [AuthGuard] },
+  { path: "editworkinghour/:id", component: EditWorkinghourComponent, canActivate: [AuthGuard] },
+  { path: "addworkinghour", component: AddWorkinghourComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@ export class AddLeaveComponent implements OnInit {
 
   constructor(private http: HttpClient, private https: HttpService) {
     this.RegistrationForm = new FormGroup({
-      internId: new FormControl("", Validators.required),
+      internId: new FormControl("", [Validators.required, Validators.minLength(4)]),
       leaveId: new FormControl(),
       leaveDate: new FormControl("", Validators.required),
       reason: new FormControl()

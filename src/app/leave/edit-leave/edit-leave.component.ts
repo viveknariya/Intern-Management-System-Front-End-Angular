@@ -15,8 +15,8 @@ export class EditLeaveComponent implements OnInit {
 
   constructor(private http: HttpClient, private https: HttpService, private activeroute: ActivatedRoute) {
     this.RegistrationForm = new FormGroup({
-      leaveId: new FormControl("", Validators.required),
-      internId: new FormControl(),
+      internId: new FormControl("", [Validators.required, Validators.minLength(4)]),
+      leaveId: new FormControl(),
       leaveDate: new FormControl("", Validators.required),
       reason: new FormControl()
     })

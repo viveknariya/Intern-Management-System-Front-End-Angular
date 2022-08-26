@@ -1,16 +1,19 @@
 <app-header></app-header>
-<div>
-    <button type="button" class="btn btn-primary" (click)="OnAdd()">Add</button>
+<div class="row my-4">
+    <div class="col col-md-4">
+        <button type="button" class="btn btn-success col-md-4" (click)="OnAdd()">Add</button>
+    </div>
 </div>
 <div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
+    <table class="table table-bordered">
+        <thead class="text-bg-success">
             <th scope="col">#</th>
             <th scope="col">Designation Name</th>
             <th scope="col">Role Name</th>
             <th scope="col">Department Name</th>
+            <th scope="col">Action</th>
         </thead>
-        <tbody>
+        <tbody class="text-bg-light">
             <tr *ngFor="let r of recordlst; let i = index;">
                 <td>{{ i + 1}}</td>
                 <td>{{ r.designationName}}</td>

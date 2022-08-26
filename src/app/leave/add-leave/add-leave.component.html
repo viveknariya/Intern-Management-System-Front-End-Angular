@@ -1,21 +1,35 @@
-<form [formGroup]="RegistrationForm">
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Intern ID</label>
-            <input class="form-control" type="text" formControlName="internId">
-        </div>
+<div class="bg-white font-monospace p-5 h5">
+    <div class="py-2 text-center my-2">
+        <a [routerLink]="['/leave']">Go To List</a>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Leave Date</label>
-            <input class="form-control" type="date" formControlName="leaveDate">
-        </div>
+    <div class="h2 py-2 text-bg-success text-center mb-4">
+        Add Leave Record
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Reason</label>
-            <input class="form-control" type="text" formControlName="reason">
+    <hr>
+    <form [formGroup]="RegistrationForm">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Intern ID</label>
+                <input class="form-control" type="text" formControlName="internId">
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary" [disabled]="!RegistrationForm.valid" (click)="onAdd()">Add</button>
-</form>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Leave Date</label>
+                <input class="form-control" type="date" formControlName="leaveDate">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Reason</label>
+                <input class="form-control" type="text" formControlName="reason">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                <button class="btn btn-success col-md-4" [disabled]="!RegistrationForm.valid" (click)="onAdd()">Add
+                    Leave</button>
+            </div>
+        </div>
+    </form>
+</div>

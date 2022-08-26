@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private http: HttpService) {
+  constructor(private https: HttpService) {
     this.loginForm = new FormGroup({
       userName: new FormControl(),
       Password: new FormControl(),
@@ -19,10 +19,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.setItem('login', '')
   }
 
   onLogIn() {
-    this.http.login(this.loginForm.value);
+    this.https.login(this.loginForm.value);
   }
 
 }

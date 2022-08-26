@@ -1,21 +1,35 @@
-<form [formGroup]="RegistrationForm">
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Designation Name</label>
-            <input class="form-control" type="text" formControlName="designationName">
-        </div>
+<div class="bg-white font-monospace p-5 h5">
+    <div class="py-2 text-center my-2">
+        <a [routerLink]="['/designation']">Go To List</a>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Role Name</label>
-            <input class="form-control" type="text" formControlName="roleName">
-        </div>
+    <div class="h2 py-2 text-bg-success text-center mb-4">
+        Add Designation Record
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Department Name</label>
-            <input class="form-control" type="text" formControlName="departmentName">
+    <hr>
+    <form [formGroup]="RegistrationForm">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Designation Name</label>
+                <input class="form-control" type="text" formControlName="designationName">
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary" [disabled]="!RegistrationForm.valid" (click)="onAdd()">Add</button>
-</form>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Role Name</label>
+                <input class="form-control" type="text" formControlName="roleName">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Department Name</label>
+                <input class="form-control" type="text" formControlName="departmentName">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                <button class="btn btn-success col-md-6" [disabled]="!RegistrationForm.valid" (click)="onAdd()">Add
+                    Designation</button>
+            </div>
+        </div>
+    </form>
+</div>

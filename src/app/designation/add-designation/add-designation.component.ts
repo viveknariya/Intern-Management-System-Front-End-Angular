@@ -16,9 +16,9 @@ export class AddDesignationComponent implements OnInit {
 
   constructor(private http: HttpClient, private https: HttpService) {
     this.RegistrationForm = new FormGroup({
-      designationName: new FormControl("", Validators.required),
-      roleName: new FormControl("", Validators.required),
-      departmentName: new FormControl("", Validators.required)
+      designationName: new FormControl("", [Validators.required, Validators.minLength(5)]),
+      roleName: new FormControl("", [Validators.required, Validators.minLength(5)]),
+      departmentName: new FormControl("", [Validators.required, Validators.minLength(5)])
     })
   }
 

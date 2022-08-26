@@ -1,49 +1,66 @@
-<form [formGroup]="RegistrationForm">
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Intern Id</label>
-            <input class="form-control" type="text" formControlName="internId">
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Name</label>
-            <input class="form-control" type="text" formControlName="internName">
-        </div>
+<div class="bg-white font-monospace p-5 h5">
+    <div class="py-2 text-center my-2">
+        <a [routerLink]="['/login']">Switch To Login</a>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Password</label>
-            <input class="form-control" type="password" formControlName="internPassword">
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Confirm Password</label>
-            <input class="form-control" type="password">
-        </div>
+    <div class="h2 py-2 text-bg-success text-center mb-4">
+        Registration Form
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Phone Number</label>
-            <input class="form-control" type="text" formControlName="phoneNumber">
+    <hr>
+    <form [formGroup]="RegistrationForm">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Intern Id</label>
+                <input class="form-control" type="text" formControlName="internId" placeholder="intern id">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" formControlName="internName" placeholder="full name">
+            </div>
         </div>
-        <div class="col-md-6">
-            <label class="form-label">Mail Id</label>
-            <input class="form-control" type="text" formControlName="emailId">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Password</label>
+                <input class="form-control" type="password" formControlName="internPassword" placeholder="password">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Confirm Password</label>
+                <input class="form-control" type="password">
+            </div>
         </div>
-    </div>
-    <div>
-        <label class="form-label">Address</label>
-        <input class="form-control" type="text" formControlName="internAddress">
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Status</label>
-            <input class="form-control" type="text" formControlName="internStatus">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Phone Number</label>
+                <input class="form-control" type="text" formControlName="phoneNumber" placeholder="0123456789">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Mail Id</label>
+                <input class="form-control" type="text" formControlName="emailId" placeholder="ex@ex.com">
+            </div>
         </div>
-        <div class="col-md-6">
-            <label class="form-label">Designation</label>
-            <select class="form-select" formControlName="designation">
-                <option *ngFor="let d of designationlst;" [value]="d.designationName">{{ d.designationName }}</option>
-            </select>
+        <div class="row my-4">
+            <div class="col-md-12">
+                <label class="form-label">Address</label>
+                <input class="form-control" type="text" formControlName="internAddress" placeholder="address">
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary" [disabled]="!RegistrationForm.valid" (click)="onSubmit()">Register</button>
-</form>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label class="form-label">Status</label>
+                <input class="form-control" type="text" formControlName="internStatus">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Designation</label>
+                <select class="form-select" formControlName="designation">
+                    <option *ngFor="let d of designationlst;" [value]="d.designationName">{{
+                        d.designationName }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                <button class="btn btn-success col-md-12" [disabled]="!RegistrationForm.valid"
+                    (click)="onSubmit()">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
