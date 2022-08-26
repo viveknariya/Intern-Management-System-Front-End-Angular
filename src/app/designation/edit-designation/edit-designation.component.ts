@@ -13,8 +13,6 @@ export class EditDesignationComponent implements OnInit {
 
   RegistrationForm: FormGroup
 
-  designationlst: any = []
-
   constructor(private http: HttpClient, private https: HttpService, private activeroute: ActivatedRoute) {
     this.RegistrationForm = new FormGroup({
       designationId: new FormControl(),

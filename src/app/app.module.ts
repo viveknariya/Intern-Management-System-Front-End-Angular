@@ -15,6 +15,12 @@ import { HeaderComponent } from './header/header.component';
 import { DesignationComponent } from './designation/designation.component';
 import { AddDesignationComponent } from './designation/add-designation/add-designation.component';
 import { EditDesignationComponent } from './designation/edit-designation/edit-designation.component';
+import { LeaveComponent } from './leave/leave.component';
+import { AddLeaveComponent } from './leave/add-leave/add-leave.component';
+import { EditLeaveComponent } from './leave/edit-leave/edit-leave.component';
+import { WorkinghourComponent } from './workinghour/workinghour.component';
+import { AddWorkinghourComponent } from './workinghour/add-workinghour/add-workinghour.component';
+import { EditWorkinghourComponent } from './workinghour/edit-workinghour/edit-workinghour.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,13 @@ import { EditDesignationComponent } from './designation/edit-designation/edit-de
     HeaderComponent,
     DesignationComponent,
     AddDesignationComponent,
-    EditDesignationComponent
+    EditDesignationComponent,
+    LeaveComponent,
+    AddLeaveComponent,
+    EditLeaveComponent,
+    WorkinghourComponent,
+    AddWorkinghourComponent,
+    EditWorkinghourComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<form [formGroup]="RegistrationForm">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Intern ID</label>
+            <input class="form-control" type="text" formControlName="internId">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Leave Date</label>
+            <input class="form-control" type="date" formControlName="leaveDate">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Reason</label>
+            <input class="form-control" type="text" formControlName="reason">
+        </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!RegistrationForm.valid" (click)="onEdit()">Add</button>
+</form>

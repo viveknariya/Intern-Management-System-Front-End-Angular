@@ -19,3 +19,15 @@ export class designation {
     roleName: string = ""
     departmentName: string = " "
 }
+export class leave {
+    internId: string = ""
+    leaveDate: Date | undefined
+    reason: string = ""
+}
+
+export class workingHour {
+    internId: string = ""
+    monthly: string = ""
+    companyWorkingHour: string = ""
+    internWorkingHour: string = ""
+}

@@ -27,7 +27,7 @@ export class EditRecordComponent implements OnInit {
       emailId: new FormControl(),
       internAddress: new FormControl(),
       internStatus: new FormControl(),
-      designation: new FormControl("", Validators.required)
+      designation: new FormControl()
 
     })
   }
@@ -63,7 +63,19 @@ export class EditRecordComponent implements OnInit {
   }
 
   onEdit() {
-    this.https.EditRecord(this.RegistrationForm.value)
+    console.log(this.RegistrationForm.value)
+    let payload = {
+      'internId': this.RegistrationForm.value.internId,
+      'internPassword': this.RegistrationForm.value.internPassword,
+      'internName': this.RegistrationForm.value.internName,
+      'phoneNumber': this.RegistrationForm.value.phoneNumber,
+      'emailId': this.RegistrationForm.value.emailId,
+      'internAddress': this.RegistrationForm.value.internAddress,
+      'internStatus': this.RegistrationForm.value.internStatus,
+      'designation': +this.RegistrationForm.value.designation,
+    }
+    console.log(payload)
+    this.https.EditRecord(payload)
   }
 
 }

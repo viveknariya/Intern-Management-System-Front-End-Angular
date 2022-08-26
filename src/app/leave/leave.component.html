@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div>
+    <button type="button" class="btn btn-primary" (click)="OnAdd()">Add</button>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Intern ID</th>
+            <th scope="col">Leave Date</th>
+            <th scope="col">Reason</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recordlst; let i = index;">
+                <td>{{ i + 1}}</td>
+                <td>{{ r.internId}}</td>
+                <td>{{ r.leaveDate}}</td>
+                <td>{{ r.reason}}</td>
+                <td>
+                    <div class="d-flex flex-row">
+                        <button type="button" class="btn btn-danger" (click)="OnDelete(r.leaveId)">Delete</button>|
+                        <button type="button" class="btn btn-warning" (click)="OnEdit(r.leaveId)">Edit</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
