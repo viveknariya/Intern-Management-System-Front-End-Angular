@@ -132,7 +132,7 @@ export class HttpService {
   }
 
   AddWorkingHour(payload: any) {
-    let response = this.httpservices.post("https://localhost:44316/api/WorkingHour", payload, { responseType: 'text' });
+    let response = this.httpservices.post("https://localhost:44316/api/WorkingHour", payload);
     response.subscribe({
       next: nxt => {
         console.log(nxt)
@@ -140,13 +140,13 @@ export class HttpService {
         this.route.navigate(['workinghour'])
       },
       error: err => {
+        this.route.navigate(['workinghour'])
         console.log(err.error)
-        alert(err.error)
       }
     })
   }
   EditWorkingHour(payload: any) {
-    let response = this.httpservices.put("https://localhost:44316/api/WorkingHour", payload, { responseType: 'text' });
+    let response = this.httpservices.put("https://localhost:44316/api/WorkingHour", payload);
     response.subscribe({
       next: nxt => {
         console.log(nxt)

@@ -26,6 +26,7 @@ export class StatusComponent implements OnInit {
     }[] = [];
 
   interndetails: {
+    internId: any
     internName: any,
     phoneNumber: any,
     emailId: any,
@@ -46,6 +47,7 @@ export class StatusComponent implements OnInit {
 
   Search() {
     this.interndetails = {
+      internId: "",
       internName: "",
       phoneNumber: "",
       emailId: "",
