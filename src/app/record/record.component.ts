@@ -11,14 +11,23 @@ import { EditRecordComponent } from './edit-record/edit-record.component';
 })
 export class RecordComponent implements OnInit {
 
-  recordlst: any = [];
+  recordlst: {
+    internId: string,
+    internPassword: string,
+    phoneNumber: string,
+    internName: string,
+    emailId: string,
+    internAddress: string,
+    internStatus: string,
+    designation: string,
+  }[] = [];
 
   constructor(private http: HttpClient, private route: Router) { }
 
   getData() {
     let response = this.http.get("https://localhost:44316/api/InternRecord")
     response.subscribe({
-      next: nxt => {
+      next: (nxt: any) => {
         console.log(nxt)
         this.recordlst = nxt;
       }

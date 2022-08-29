@@ -13,9 +13,16 @@ export class EditRecordComponent implements OnInit {
 
   record: any;
 
+  passCheck: boolean = false;
+
   RegistrationForm: FormGroup
 
-  designationlst: any = []
+  designationlst: {
+    designationId: number,
+    designationName: string,
+    roleName: string,
+    departmentName: string,
+  }[] = [];
 
   constructor(private http: HttpClient, private https: HttpService, private activeroute: ActivatedRoute) {
     this.RegistrationForm = new FormGroup({
@@ -35,7 +42,7 @@ export class EditRecordComponent implements OnInit {
   ngOnInit(): void {
     let response1 = this.http.get("https://localhost:44316/api/Designation")
     response1.subscribe({
-      next: nxt => {
+      next: (nxt: any) => {
         this.designationlst = nxt
       },
       error: err => {

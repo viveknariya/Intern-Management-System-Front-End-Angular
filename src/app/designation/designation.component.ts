@@ -9,14 +9,19 @@ import { Router } from '@angular/router';
 })
 export class DesignationComponent implements OnInit {
 
-  recordlst: any = [];
+  recordlst: {
+    designationId: number,
+    designationName: string,
+    roleName: string,
+    departmentName: string,
+  }[] = [];
 
   constructor(private http: HttpClient, private route: Router) { }
 
   getData() {
     let response = this.http.get("https://localhost:44316/api/Designation")
     response.subscribe({
-      next: nxt => {
+      next: (nxt: any) => {
         this.recordlst = nxt;
       }
     })
@@ -41,7 +46,7 @@ export class DesignationComponent implements OnInit {
       }
     })
   }
-  OnEdit(r: string) {
+  OnEdit(r: number) {
     console.log(r)
     this.route.navigate(['editdesignation', r])
   }

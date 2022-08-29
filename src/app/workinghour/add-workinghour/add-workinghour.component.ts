@@ -12,8 +12,6 @@ export class AddWorkinghourComponent implements OnInit {
 
   RegistrationForm: FormGroup
 
-  designationlst: any = []
-
   constructor(private http: HttpClient, private https: HttpService) {
     this.RegistrationForm = new FormGroup({
       whid: new FormControl(),

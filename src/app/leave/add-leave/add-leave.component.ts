@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
@@ -12,9 +11,7 @@ export class AddLeaveComponent implements OnInit {
 
   RegistrationForm: FormGroup
 
-  designationlst: any = []
-
-  constructor(private http: HttpClient, private https: HttpService) {
+  constructor(private https: HttpService) {
     this.RegistrationForm = new FormGroup({
       internId: new FormControl("", [Validators.required, Validators.minLength(4)]),
       leaveId: new FormControl(),

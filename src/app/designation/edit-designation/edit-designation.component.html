@@ -11,18 +11,30 @@
             <div class="col-md-6">
                 <label class="form-label">Designation Name</label>
                 <input class="form-control" type="text" formControlName="designationName">
+                <span
+                    *ngIf="this.RegistrationForm.get('designationName')?.invalid && this.RegistrationForm.get('designationName')?.touched"
+                    style="color: red;" class="h6">Input field required more then 4 char
+                </span>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Role Name</label>
                 <input class="form-control" type="text" formControlName="roleName">
+                <span
+                    *ngIf="this.RegistrationForm.get('roleName')?.invalid && this.RegistrationForm.get('roleName')?.touched"
+                    style="color: red;" class="h6">Input field required more then 4 char
+                </span>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Department Name</label>
                 <input class="form-control" type="text" formControlName="departmentName">
+                <span
+                    *ngIf="this.RegistrationForm.get('departmentName')?.invalid && this.RegistrationForm.get('departmentName')?.touched"
+                    style="color: red;" class="h6">Input field required more then 4 char
+                </span>
             </div>
         </div>
         <div class="row my-4">

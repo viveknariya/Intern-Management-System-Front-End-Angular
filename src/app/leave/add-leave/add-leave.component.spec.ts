@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpService } from 'src/app/http.service';
 
 import { AddLeaveComponent } from './add-leave.component';
 
@@ -7,17 +8,18 @@ describe('AddLeaveComponent', () => {
   let fixture: ComponentFixture<AddLeaveComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AddLeaveComponent ]
+    TestBed.configureTestingModule({
+      declarations: [AddLeaveComponent],
+      imports: [HttpService]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(AddLeaveComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
   it('should create', () => {
+    fixture = TestBed.createComponent(AddLeaveComponent);
+    component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
 });

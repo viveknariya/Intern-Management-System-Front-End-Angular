@@ -12,6 +12,7 @@ import { AddRecordComponent } from './record/add-record/add-record.component';
 import { EditRecordComponent } from './record/edit-record/edit-record.component';
 import { RecordComponent } from './record/record.component';
 import { RegisterComponent } from './register/register.component';
+import { StatusComponent } from './status/status.component';
 import { AddWorkinghourComponent } from './workinghour/add-workinghour/add-workinghour.component';
 import { EditWorkinghourComponent } from './workinghour/edit-workinghour/edit-workinghour.component';
 import { WorkinghourComponent } from './workinghour/workinghour.component';
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: "leave", component: LeaveComponent, canActivate: [AuthGuard] },
   { path: "workinghour", component: WorkinghourComponent, canActivate: [AuthGuard] },
   { path: "editworkinghour/:id", component: EditWorkinghourComponent, canActivate: [AuthGuard] },
-  { path: "addworkinghour", component: AddWorkinghourComponent, canActivate: [AuthGuard] }
+  { path: "addworkinghour", component: AddWorkinghourComponent, canActivate: [AuthGuard] },
+  { path: "status", component: StatusComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

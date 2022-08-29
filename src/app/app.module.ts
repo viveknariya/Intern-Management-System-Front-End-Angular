@@ -21,6 +21,7 @@ import { EditLeaveComponent } from './leave/edit-leave/edit-leave.component';
 import { WorkinghourComponent } from './workinghour/workinghour.component';
 import { AddWorkinghourComponent } from './workinghour/add-workinghour/add-workinghour.component';
 import { EditWorkinghourComponent } from './workinghour/edit-workinghour/edit-workinghour.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EditWorkinghourComponent } from './workinghour/edit-workinghour/edit-wo
     EditLeaveComponent,
     WorkinghourComponent,
     AddWorkinghourComponent,
-    EditWorkinghourComponent
+    EditWorkinghourComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,

@@ -11,30 +11,49 @@
             <div class="col-md-6">
                 <label class="form-label">Intern Id</label>
                 <input class="form-control" type="text" formControlName="internId" placeholder="intern id">
+                <span
+                    *ngIf="this.RegistrationForm.get('internId')?.invalid && this.RegistrationForm.get('internId')?.touched"
+                    style="color: red;" class="h6">Input field required more then 3 char
+                </span>
+
             </div>
             <div class="col-md-6">
                 <label class="form-label">Name</label>
                 <input class="form-control" type="text" formControlName="internName" placeholder="full name">
+                <span
+                    *ngIf="this.RegistrationForm.get('internName')?.invalid && this.RegistrationForm.get('internName')?.touched"
+                    style="color: red;" class="h6">Input field required more then 2 char
+                </span>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Password</label>
                 <input class="form-control" type="password" formControlName="internPassword" placeholder="password">
+
             </div>
             <div class="col-md-6">
                 <label class="form-label">Confirm Password</label>
-                <input class="form-control" type="password">
+                <input class="form-control" type="password" formControlName="confirmPassword"
+                    placeholder="Confirm Password">
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Phone Number</label>
                 <input class="form-control" type="text" formControlName="phoneNumber" placeholder="0123456789">
+                <span
+                    *ngIf="this.RegistrationForm.get('phoneNumber')?.invalid && this.RegistrationForm.get('phoneNumber')?.touched"
+                    style="color: red;" class="h6">only ten digit accepted
+                </span>
             </div>
             <div class="col-md-6">
                 <label class="form-label">Mail Id</label>
                 <input class="form-control" type="text" formControlName="emailId" placeholder="ex@ex.com">
+                <span
+                    *ngIf="this.RegistrationForm.get('emailId')?.invalid && this.RegistrationForm.get('emailId')?.touched"
+                    style="color: red;" class="h6">invalid email format
+                </span>
             </div>
         </div>
         <div class="row my-4">
@@ -46,15 +65,29 @@
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Status</label>
-                <input class="form-control" type="text" formControlName="internStatus">
+                <select class="form-select" formControlName="internStatus">
+                    <option value="On Leave">On Leave</option>
+                    <option value="Work From Office">Work From Office</option>
+                    <option value="Work From Home">Work From Home</option>
+                </select>
             </div>
             <div class="col-md-6">
                 <label class="form-label">Designation</label>
                 <select class="form-select" formControlName="designation">
-                    <option *ngFor="let d of designationlst;" [value]="d.designationName">{{
+                    <option *ngFor="let d of designationlst;" [value]="d.designationId">{{
                         d.designationName }}</option>
                 </select>
+                <span
+                    *ngIf="this.RegistrationForm.get('designation')?.invalid && this.RegistrationForm.get('designation')?.touched"
+                    style="color: red;" class="h6">Required
+                </span>
             </div>
+        </div>
+        <div>
+            <span
+                *ngIf="!this.passCheck && this.RegistrationForm.get('internPassword')?.invalid && this.RegistrationForm.get('internPassword')?.touched"
+                style="color: red;" class="h6">password & confirm password must macth, can not be empty
+            </span>
         </div>
         <div class="row my-4">
             <div class="col-md-12">

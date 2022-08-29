@@ -12,6 +12,10 @@
                 <label class="form-label">User Name</label>
                 <input type="text" class="form-control" formControlName="userName" />
             </div>
+            <br>
+            <span *ngIf="this.loginForm.get('userName')?.invalid && this.loginForm.get('userName')?.touched"
+                style="color: red;" class="h6">User Name is
+                Required</span>
         </div>
 
         <div class="row my-4">
@@ -19,6 +23,10 @@
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" formControlName="Password" />
             </div>
+            <br>
+            <span *ngIf="this.loginForm.get('Password')?.invalid && this.loginForm.get('Password')?.touched"
+                style="color: red;" class="h6">Password is
+                Required</span>
         </div>
         <button type="submit" class="btn btn-success" (click)="onLogIn()">Log in</button>
     </form>

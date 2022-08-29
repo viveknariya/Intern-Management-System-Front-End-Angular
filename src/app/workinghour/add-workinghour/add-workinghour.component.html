@@ -11,24 +11,40 @@
             <div class="col-md-6">
                 <label class="form-label">Intern ID</label>
                 <input class="form-control" type="text" formControlName="internId">
+                <span
+                    *ngIf="this.RegistrationForm.get('internId')?.invalid && this.RegistrationForm.get('internId')?.touched"
+                    style="color: red;" class="h6">required
+                </span>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Month</label>
                 <input class="form-control" type="month" formControlName="monthly">
+                <span
+                    *ngIf="this.RegistrationForm.get('monthly')?.invalid && this.RegistrationForm.get('monthly')?.touched"
+                    style="color: red;" class="h6">required
+                </span>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Company Working Hour</label>
                 <input class="form-control" type="text" formControlName="companyWorkingHour">
+                <span
+                    *ngIf="this.RegistrationForm.get('companyWorkingHour')?.invalid && this.RegistrationForm.get('companyWorkingHour')?.touched"
+                    style="color: red;" class="h6">required
+                </span>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6">
                 <label class="form-label">Intern Working Hour</label>
                 <input class="form-control" type="text" formControlName="internWorkingHour">
+                <span
+                    *ngIf="this.RegistrationForm.get('internWorkingHour')?.invalid && this.RegistrationForm.get('internWorkingHour')?.touched"
+                    style="color: red;" class="h6">required
+                </span>
             </div>
         </div>
         <div class="row my-4">
