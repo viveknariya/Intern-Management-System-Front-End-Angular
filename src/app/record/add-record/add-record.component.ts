@@ -28,7 +28,7 @@ export class AddRecordComponent implements OnInit {
       internPassword: new FormControl("", [Validators.required, Validators.minLength(4)]),
       internName: new FormControl("", [Validators.required, Validators.minLength(3), Validators.pattern("[a-z A-Z]+")]),
       phoneNumber: new FormControl("", [Validators.pattern("[0-9]{10}")]),
-      emailId: new FormControl("", [Validators.email]),
+      emailId: new FormControl(null, [Validators.email]),
       internAddress: new FormControl("", [Validators.minLength(5)]),
       internStatus: new FormControl(),
       designation: new FormControl("", Validators.required),

@@ -61,6 +61,9 @@ export class StatusComponent implements OnInit {
         this.interndetails = nxt;
       },
       error: err => {
+        console.log(err)
+        alert(err.error);
+
       }
     })
 

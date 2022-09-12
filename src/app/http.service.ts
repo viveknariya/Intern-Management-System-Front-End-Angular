@@ -140,8 +140,8 @@ export class HttpService {
         this.route.navigate(['workinghour'])
       },
       error: err => {
-        this.route.navigate(['workinghour'])
         console.log(err.error)
+        alert(err.error)
       }
     })
   }
